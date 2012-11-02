@@ -21,8 +21,8 @@ echo "<img src=\"files/default_green_back.png\" width=64 height=128 />";
 }
 ?>
 <p>
-<a href="gallery.php">Image from Gallery</a><br /><br />
-<a href="upload.php">Upload an image</a>
+<a href="gallery.php">Avatar from Gallery</a><br /><br />
+<a href="upload.php">Upload an Avatar</a>
 </p>
 
 <fieldset>

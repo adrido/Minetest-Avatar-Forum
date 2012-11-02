@@ -20,7 +20,7 @@ include "scripts/pageheader.php";
 $links="";
 
 echo "<table width=\"900\"><tr><td>\n";
-echo "<table width=\"900\" bgcolor=\"#FFFFBD\"><tr><td width=\"100\"><a href=\"change.php?id={$row[0]}\">Use This</a></td>\n";
+echo "<table width=\"900\" bgcolor=\"#FFFFBD\"><tr><td width=\"100\"><a href=\"change.php?f={$row[3]}&b={$row[3]}_back\">Use This</a></td>\n";
 
 echo "<td width=\"650\">\n";    // Download Link
 echo "<h1 align=center>{$row[1]} - by {$row[4]}</h1></td>\n";  // Title and User Link

@@ -3,17 +3,23 @@ include "scripts/setup.php";
 
 $page_title="Upload a Texture";
 
+$message="This page is in development - it does not work yet.";
+
 include "scripts/upload.php";
 
 include "scripts/pageheader.php";
+
+
 ?>
+<font color="#FF0000"><i><?php echo $message;?></i></font>
 <h1>Texture Upload</h1>
-<form action="upload.php" method="post">
+<form action="upload.php" method="post" enctype="multipart/form-data">
+<input type="hidden" name="submitted" value="yes">
 <fieldset>
 <legend>Character Textures</legend>
 <i>Texture files must be 16x32 or to scale.</i><br />
-Front: <input type="file" name="front"><br />
-Back: <input type="file" name="back">
+Front: <input type="file" name="front" id="front"><br />
+Back: <input type="file" name="back" id="back">
 </fieldset>
 
 <p>

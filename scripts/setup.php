@@ -19,6 +19,9 @@ SQLerror("MySQL Database", "Error connecting to the MySQL database");
 
 mysql_select_db($sql_db,$handle) or die("Error Switching DB");
 
+define('FORUM_QUIET_VISIT', 1);
+define('FORUM_TURN_OFF_MAINT', 1);
+define('FORUM_DISABLE_CSRF_CONFIRM', 1);
 define('FORUM_ROOT', '../../mtforum/');
 require FORUM_ROOT.'include/common.php';
 

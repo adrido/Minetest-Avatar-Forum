@@ -28,7 +28,7 @@
 ?></div>                                                                           
 
 <div id="userbar" style="text-align:left;position:relative;left:10px;top:35px;width:180px;height=30px;"><?php
-     echo "<a href=\"$serverpath/index.php\"><font color=\"#FFFFFF\"><u>Home</u></font></a>";
+     echo "<a href=\"$serverpath/index.php\"><font color=\"#FFFFFF\"><u>Home</u></font></a> - <a href=\"".FORUM_ROOT."\"><font color=\"#FFFFFF\"><u>Forum</u></font></a>";
 
 ?></div>
 
