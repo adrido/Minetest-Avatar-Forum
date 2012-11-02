@@ -14,4 +14,6 @@ $mode="tags";
 
 include "scripts/gallery.php";
 
+include "scripts/pagefooter.php";
+
 ?>

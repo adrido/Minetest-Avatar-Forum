@@ -42,5 +42,7 @@ echo formatbb($row[2])."</p></div></td>\n"; // Description
 
 echo "</table></td></tr>\n";
 
-echo "<tr height=30 bgcolor=\"#FFFFBD\"><td style=\"text-align:right;\">$links&#32;&#32;&#32;&#32;</td></tr>\n";
+echo "<tr height=30 bgcolor=\"#FFFFBD\"><td style=\"text-align:right;\">$links&#32;&#32;&#32;&#32;</td></tr></table>\n";
+
+include "scripts/pagefooter.php";
 ?>

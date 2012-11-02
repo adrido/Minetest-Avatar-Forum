@@ -24,7 +24,11 @@
 <div id="slogan" style="text-align:right;position:relative;left:200px;top:60px;width:400px;height=20px;">Upload or Choose a character texture</div>
 
 <div id="userbar" style="text-align:right;position:relative;left:710px;top:55px;width:180px;height=30px;"><?php
-   echo "<font color=\"#FFFFFF\"><u>".$forum_user['username']."</u></font></a>";
+if ($forum_user['username']=="Guest"){
+  echo "<a href=\"".FORUM_ROOT."login.html\"><font color=\"#FFFFFF\"><u>Login</u></font></a>";
+}else{
+   echo "<font color=\"#FFFFFF\">".$forum_user['username']."</font>";
+}
 ?></div>                                                                           
 
 <div id="userbar" style="text-align:left;position:relative;left:10px;top:35px;width:180px;height=30px;"><?php
@@ -33,7 +37,7 @@
 ?></div>
 
 <div style="position:relative;left:500px;top:70px;width:400px;text-align:right;">
-<form method="get" action="<?php echo $serverpath;?>/search.php">
+<form method="get" action="<?php echo $serverpath;?>/gallery.php">
 <input type="hidden" name="mode" value="sb">
 <input type="text" placeholder="search for something" name="id"> <input type="submit" value="Search">
 </form>

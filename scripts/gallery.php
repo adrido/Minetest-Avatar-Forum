@@ -7,7 +7,7 @@ if ($mode=="tags"){
 }else if ($mode=="user"){
    $qu_str="SELECT * FROM cha WHERE owner='$query'";
 }else if ($mode=="sb"){
-   $qu_str="SELECT * FROM cha WHERE tags LIKE '%$query%' OR name LIKE '%$query%' OR overview LIKE '%$query%'";
+   $qu_str="SELECT * FROM cha WHERE tags LIKE '%$query%' OR name LIKE '%$query%'";
 }
 
 
