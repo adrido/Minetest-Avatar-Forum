@@ -25,7 +25,10 @@ define('FORUM_DISABLE_CSRF_CONFIRM', 1);
 define('FORUM_ROOT', '../../mtforum/');
 require FORUM_ROOT.'include/common.php';
 
-if ($forum_user['username']=="Guest")
-	header("location: ".FORUM_ROOT);
+function require_login($forum_user){
+if ($forum_user['username']=="Guest"){
+	header("location: ".FORUM_ROOT."login.html");
+}
+}
 
 ?>

@@ -1,6 +1,8 @@
 <?php
 include "scripts/setup.php";
 
+require_login($forum_user);
+
 $page_title="Upload a Texture";
 
 $message="This page is in development - it does not work yet.";
@@ -30,6 +32,7 @@ Back: <input type="file" name="back" id="back">
 <fieldset>
 <legend>Only fill in if the above check box is ticked.</legend>
 Name of Character pack: <input type="text" name="name" /><br />
+Tags: <input type="text" name="tags" /><br />
 Description:<br />
 <textarea name="desc" cols=100 rows=7>
 </textarea>

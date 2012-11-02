@@ -7,6 +7,12 @@ include "scripts/pageheader.php";
 ?>
 
 <?php
+if ($forum_user['username']=="Guest"){
+  echo "<h1>Welcome</h1>";
+  echo "Log in to the Minetest forum to set and upload your avatars!<br />\n Until then, you can still <a href=\"gallery.php\">look around</a>";
+  die("");
+}
+
 echo "<h1>Hello, ".$forum_user['username']."</h1>\n";
 
 if (file_exists("files/".$forum_user['cha_front'].".png")){

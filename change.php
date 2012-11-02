@@ -1,6 +1,8 @@
 <?php
 include "scripts/setup.php";
 
+require_login($forum_user);
+
 $user=$forum_user['username'];
 
 $set="";

@@ -15,6 +15,7 @@ $public=($public=="on");
 
 $name=$_POST['name'];
 $desc=$_POST['desc'];
+$tags=$_POST['tags'];
 
 if ($public==true && $name==""){
     $message="You need to give your Avatar Textures a name!";
@@ -62,6 +63,15 @@ if ($_FILES["back"]["error"] > 0){
 
   if ($public==false){
     header("location: change.php?f=$front_dest&b=$back_dest");
+  }else{
+        $name= mysql_real_escape_string ($name);
+        $desc= mysql_real_escape_string ($desc);
+        $front_dest= mysql_real_escape_string ($front_dest);
+        $tags= mysql_real_escape_string ($tags);
+        $owner= mysql_real_escape_string ($forum_user['username']);
+        mysql_query("INSERT INTO cha (name, description, file, owner, tags) VALUES ('$name', '$desc', '$front_dest', '$owner', '$tags')",$handle);
+        $the_id=mysql_insert_id($handle);
+        header("location: viewcha.php?id=$the_id");
   }
 }else{
   $message="'".$_FILES["front"]["type"]."' is a invalid format. Only PNG files are allowed. ";
