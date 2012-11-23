@@ -23,7 +23,7 @@ echo "<table width=\"900\"><tr><td>\n";
 echo "<table width=\"900\" bgcolor=\"#FFFFBD\"><tr><td width=\"100\">";
 
 if ($forum_user['username']!="Guest")
-   echo "<a href=\"change.php?f={$row[3]}&b={$row[3]}_back\">Use This</a>";
+   echo "<a href=\"change.php?f=http://multa.bugs3.com/minetest/characters/files/{$row[3]}&b=http://multa.bugs3.com/minetest/characters/files/{$row[3]}_back\">Use This</a>";
 
 echo "</td>\n";
 

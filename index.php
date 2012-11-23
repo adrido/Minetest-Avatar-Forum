@@ -16,14 +16,14 @@ if ($forum_user['username']=="Guest"){
 echo "<h1>Hello, ".$forum_user['username']."</h1>\n";
 
 $def=false;
-if (file_exists("files/".$forum_user['cha_front'].".png")){
-echo "<img src=\"files/".$forum_user['cha_front'].".png\" width=64 height=128 /> ";
+if ($forum_user['cha_back']!=""){
+echo "<img src=\"".$forum_user['cha_front'].".png\" width=64 height=128 alt=\"left\" /> ";
 }else{
 echo "<img src=\"files/default_texture.png\" width=64 height=128 /> ";
 $def=true;
 }
-if (file_exists("files/".$forum_user['cha_back'].".png")){
-echo "<img src=\"files/".$forum_user['cha_back'].".png\" width=64 height=128 />";
+if ($forum_user['cha_back']!=""){
+echo "<img src=\"".$forum_user['cha_back'].".png\" width=64 height=128  alt=\"right\" />";
 }else{
 echo "<img src=\"files/default_texture_back.png\" width=64 height=128 />";
 $def=true;
@@ -37,12 +37,24 @@ if ($def==true)
 <a href="upload.php">Upload an Avatar</a>
 </p>
 
-<fieldset>
+<script>
+function hideNotice(){
+  var element = document.getElementById("notice");
+  var display ='none';
+  element.style.display = display;
+  }
+</script>
+
+
+<fieldset id="notice">
 <legend>Notice</legend>
 You will not be able to change your character texture on servers which do not have the mod by PilzAdam installed.<br />
 In those servers, all players will have the same character texture, which is dependant on the texture pack installed<br />
 <br />
-When you are on a server that has the mod installed, type <i>/register [your forum name]</i> to claim your avatar
+The mod does not currently download the player's avatar, but it will do soon.
+<!--When you are on a server that has the mod installed, type <i>/register [your forum name]</i> to claim your avatar-->
+<br /><br />
+<a onClick="javascript:hideNotice();"><u>Close</u></a>
 </fieldset>
 
 <?php
