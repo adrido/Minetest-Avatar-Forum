@@ -1,47 +1,101 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en-gb">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="fi">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
-<meta name="Generator" content="Serif WebPlus X5 (13.0.3.029)">
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
-<title><?php echo $page_title ?> - Minetest Characters</title>
-<meta name="keywords" content="">
-<meta name="author" content="Andrew Ward">
-<meta name="copyright" content="Copyright &#xA9; to Andrew Ward">
-<meta http-equiv="Content-Language" content="en-gb">
-<meta name="robots" content="index,follow">
-<link rel="stylesheet" type="text/css" href="<?php echo $serverpath;?>/mainstyle.css" />
-<!--<link rel="icon" href="favicon.ico" type="image/x-icon">-->
+	<meta name="keywords" content="minetest minetest-c55" />
+	<meta name="description" content="<?php
+          if ($page_description=="")
+             $page_description="Minetest (minetest-c55): An open source Infiniminer/Minecraft style game";
+             
+          echo $page_description;
+        ?>" />
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<link rel="stylesheet" href="http://minetest.net/style_v2.css" type="text/css" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="bookmark icon" href="/favicon.ico" />
+	<title><?php echo $page_title;?> - Minetest Mods</title>
+
+<style>
+.inbar_login {
+	float: right;
+}
+
+#notice_bar {
+	/*text-align: center;*/
+	/*background: url("images/logo1.png") center top no-repeat;*/
+	/*background: url("images/minetest-icon-120.png") left top no-repeat;*/
+	background: #FACF73;
+	color: #000000;
+	display: block;
+	height: 30px;
+	width: auto;
+	margin: 0px;
+	padding: 1em 0 1em 0;
+	border: 0px;
+}
+</style>
 </head>
 
+<body>
 
-<body text="#000000" style="background-color:#ffffff; text-align:center; height:610px;">
-<div style="background-color:transparent;text-align:left;margin-left:auto;margin-right:auto;position:relative;width:900px;">
-
-<!--The Header-->
-<img src="<?php echo $serverpath;?>/images/header.png" width="900" height="100" border="0" alt="" style="position:absolute;left:0px;top:0px;">
-
-<div id="slogan" style="text-align:right;position:relative;left:200px;top:60px;width:400px;height=20px;">Upload or Choose a character texture</div>
-
-<div id="userbar" style="text-align:right;position:relative;left:710px;top:55px;width:180px;height=30px;"><?php
+<div id="navbar" class="navbar">
+	<div class="constrain">
+		<span class="inbar_main">
+			<ul>
+				<li class="navlink_normal"><a href="http://minetest.net/index.php">About</a></li>
+				<li class="navlink_normal"><a href="http://minetest.net/news.php">News</a></li>
+				<li class="navlink_normal"><a href="http://minetest.net/download.php">Download</a></li>
+				<li class="navlink_normal"><a href="http://minetest.net/contribute.php">Contribute</a></li>
+			</ul>
+		</span>
+		<span class="inbar_separator">
+			|
+		</span>
+		<span class="inbar_other">
+			<ul>
+				<!--<li class="navlink_special"><a href="http://c55.me/blog">Blog</a></li>
+				<li class="navlink_special"><a href="http://wiki.minetest.com/wiki/">Wiki</a></li>
+				<li class="navlink_special"><a href="http://minetest.net/forum/">Forum</a></li>
+				<li class="navlink_special"><a href="https://github.com/celeron55/minetest">Github</a></li>
+				<li class="navlink_special"><a href="http://api.minetest.net/">API</a></li>-->
+				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/index.php">Home</a></li>
+				<li class="navlink_normal"><a href="<?php echo FORUM_ROOT;?>">Forum</a></li>
+			</ul>
+		</span>
+		<span class="inbar_login">
+			<ul>
+<?php
 if ($forum_user['username']=="Guest"){
-  echo "<a href=\"".FORUM_ROOT."login.html\"><font color=\"#FFFFFF\"><u>Login</u></font></a>";
+  echo "<li class=\"navlink_normal\"><a href=\"".FORUM_ROOT."login.php\">Login</a></li>";
+  echo "<li class=\"navlink_normal\"><a href=\"".FORUM_ROOT."register.php\">Register</a></li>";
 }else{
-   echo "<font color=\"#FFFFFF\">".$forum_user['username']."</font>";
+   echo "<li class=\"navlink_normal\">".$forum_user['username']."</li>";
 }
-?></div>                                                                           
-
-<div id="userbar" style="text-align:left;position:relative;left:10px;top:35px;width:180px;height=30px;"><?php
-     echo "<a href=\"$serverpath/index.php\"><font color=\"#FFFFFF\"><u>Home</u></font></a> - <a href=\"".FORUM_ROOT."\"><font color=\"#FFFFFF\"><u>Forum</u></font></a>";
-
-?></div>
-
-<div style="position:relative;left:500px;top:70px;width:400px;text-align:right;">
-<form method="get" action="<?php echo $serverpath;?>/gallery.php">
-<input type="hidden" name="mode" value="sb">
-<input type="text" placeholder="search for something" name="id"> <input type="submit" value="Search">
-</form>
+?>
+			</ul>
+		</span>
+	</div>
+</div>
+<div class="navbarbottom1">
 </div>
 
-<!--Content Div-->
-<div style="position:relative;left:5px;top:80px;width:900px;text-wrap: suppress;">
+<div id="logo">
+	<div class="constrain">
+		<img src="http://minetest.net/images/minetest-icon-120.png" alt="logo" id="logoimage">
+		<div style="float:right;vertical-align:top;">
+		     <form method="get" action="<?php echo $serverpath;?>/gallery.php">
+                          <input type="hidden" name="mode" value="sb">
+                          <input type="text" placeholder="search for something" name="id"> <input type="submit" value="Search">
+                    </form>
+		</div>
+		<span class="bigheader">
+			<h1>Minetest Avatars</h1>
+			<h2>Upload or Choose a character texture</h2>
+		</span>
+
+	</div>
+</div>
+
+<div id="content">
+	<div class="constrain">
+		<div style="clear: both;"></div>

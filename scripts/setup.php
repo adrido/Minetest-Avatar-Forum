@@ -6,7 +6,7 @@ function SQLerror($title,$text){
 
 session_start();
 
-$serverpath="http://multa.bugs3.com/minetest/website/avatar";
+$serverpath="http://multa.bugs3.com/minetest/avatar";
 $sql_url="mysql.serversfree.com"; // The URL to the MySql Server
 $sql_user="u372522788_admin"; // The username for the MySql Server
 $sql_pass="password"; // The password for the MySql Server
@@ -22,7 +22,7 @@ mysql_select_db($sql_db,$handle) or die("Error Switching DB");
 define('FORUM_QUIET_VISIT', 1);
 define('FORUM_TURN_OFF_MAINT', 1);
 define('FORUM_DISABLE_CSRF_CONFIRM', 1);
-define('FORUM_ROOT', '../forum/');
+define('FORUM_ROOT', '../punbb/');
 require FORUM_ROOT.'include/common.php';
 
 function require_login($forum_user){
