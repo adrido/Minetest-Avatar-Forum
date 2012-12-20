@@ -3,7 +3,6 @@ require_once "scripts/setup.php";
 
 require_once "scripts/formatcode.php";
 
-require_once "scripts/skin_view.php";
 
 $id=$_GET['id'];
 

@@ -15,8 +15,6 @@ if ($forum_user['username']=="Guest"){
 
 echo "<h1>Hello, ".$forum_user['username']."</h1>\n";
 
-include "scripts/skin_view.php";
-
 //
 // View Skin
 //
