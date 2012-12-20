@@ -15,22 +15,34 @@ if ($forum_user['username']=="Guest"){
 
 echo "<h1>Hello, ".$forum_user['username']."</h1>\n";
 
+include "scripts/skin_view.php";
+
+//
+// View Skin
+//
+
 $def=false;
+
+if ($forum_user['cha_type']!=3){
 if ($forum_user['cha_back']!=""){
-echo "<img src=\"".$forum_user['cha_front'].".png\" width=64 height=128 alt=\"left\" /> ";
+skin_view(2,$forum_user['cha_front'],$forum_user['cha_back']);
 }else{
-echo "<img src=\"files/default_texture.png\" width=64 height=128 /> ";
+skin_view(2,"files/default_texture.png","files/default_texture.png");
 $def=true;
 }
-if ($forum_user['cha_back']!=""){
-echo "<img src=\"".$forum_user['cha_back'].".png\" width=64 height=128  alt=\"right\" />";
+
 }else{
-echo "<img src=\"files/default_texture_back.png\" width=64 height=128 />";
-$def=true;
+skin_view(3,$forum_user['cha_front'],"");
 }
 
 if ($def==true)
    echo "<br /><font size=2>No avatar selected.<br />\nDefault avatar from the server's texture pack will be used.</font>";
+   
+//
+// End of Skin Viewer
+//
+   
+
 ?>
 <p>
 <a href="gallery.php">Avatar from Gallery</a><br /><br />

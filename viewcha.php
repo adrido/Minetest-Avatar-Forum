@@ -1,7 +1,9 @@
 <?php
-include "scripts/setup.php";
+require_once "scripts/setup.php";
 
-include "scripts/formatcode.php";
+require_once "scripts/formatcode.php";
+
+require_once "scripts/skin_view.php";
 
 $id=$_GET['id'];
 
@@ -10,20 +12,24 @@ if (is_numeric($id)==false){
 }
 
 $res = mysql_query("SELECT * FROM cha WHERE id=$id",$handle) or SQLerror("MySQL Query Error","Error on searching database.cha.id for '$id'");
-$row = mysql_fetch_row($res) or SQLerror("Row Error","No results where found for a mod with the id $id");
+$row = mysql_fetch_array($res) or SQLerror("Row Error","No results where found for a mod with the id $id");
 $page_title="View Character - {$row[1]}";
 
 $owner = $row[4];
 
-include "scripts/pageheader.php";
+include_once "scripts/pageheader.php";
 
 $links="";
 
 echo "<table width=\"900\"><tr><td>\n";
 echo "<table width=\"900\" bgcolor=\"#FFFFBD\"><tr><td width=\"100\">";
 
-if ($forum_user['username']!="Guest")
-   echo "<a href=\"change.php?f=http://multa.bugs3.com/minetest/characters/files/{$row[3]}&b=http://multa.bugs3.com/minetest/characters/files/{$row[3]}_back\">Use This</a>";
+if ($forum_user['username']!="Guest"){
+if ($row['type']==2)
+   echo "<a href=\"change.php?t=2&f=$serverpath/files/{$row[3]}.png&b=$serverpath/files/{$row[3]}_back.png\">Use This</a>";
+else
+  echo "<a href=\"change.php?t=3&f=$serverpath/files/{$row[3]}.png\">Use This</a>";
+}
 
 echo "</td>\n";
 
@@ -34,7 +40,11 @@ echo "</tr></table></td></tr>\n"; // Version
 
 echo "<tr><td><table width=\"900\"><tr><td><div style=\"width:870px;text-wrap: suppress;\"><p>\n";
 
-echo "<center><img width=64 height=128 src=\"files/{$row[3]}.png\">\n<img width=64 height=128 src=\"files/{$row[3]}_back.png\"></center>\n";
+echo "<center>";
+
+skin_view($row['type'],"files/{$row['file']}.png","files/{$row['file']}_back.png");
+
+echo "</center>\n";
 
 echo "</p><p>\n";
 

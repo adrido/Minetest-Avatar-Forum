@@ -3,6 +3,11 @@ echo "<table width=\"100%\">";
 $query= mysql_real_escape_string ($query);
 
 if ($mode=="tags"){
+  if ($type==2)
+  $qu_str="SELECT * FROM cha WHERE type=2 AND tags LIKE '%$query%'";
+  else if ($type==3)
+    $qu_str="SELECT * FROM cha WHERE type=3 AND tags LIKE '%$query%'";
+  else
    $qu_str="SELECT * FROM cha WHERE tags LIKE '%$query%'";
 }else if ($mode=="user"){
    $qu_str="SELECT * FROM cha WHERE owner='$query'";
@@ -38,7 +43,7 @@ while ($hash = mysql_fetch_assoc($res)){
         echo "\n</tr><tr>\n";
       }
       
-      echo "<td width=70><a href=\"viewcha.php?id={$hash['id']}\" title=\"{$hash['name']} by {$hash['owner']}\"><img width=32 height=64 src=\"files/{$hash['file']}.png\"><img width=32 height=64 src=\"files/{$hash['file']}_back.png\"></a></td>";
+      echo "<td width=32><a href=\"viewcha.php?id={$hash['id']}\" title=\"{$hash['name']} by {$hash['owner']}\"><img width=32 height=64 src=\"files/{$hash['file']}.png\"></a></td><td width=32><a href=\"viewcha.php?id={$hash['id']}\" title=\"{$hash['name']} by {$hash['owner']}\"><img width=32 height=64 src=\"files/{$hash['file']}_back.png\"></a>";
 }
 
 while($alternate<11){

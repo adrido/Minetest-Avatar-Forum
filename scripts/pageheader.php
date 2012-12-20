@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="http://minetest.net/style_v2.css" type="text/css" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="bookmark icon" href="/favicon.ico" />
-	<title><?php echo $page_title;?> - Minetest Mods</title>
+	<title><?php echo $page_title;?> - Minetest Skins</title>
 
 <style>
 .inbar_login {
@@ -53,13 +53,9 @@
 		</span>
 		<span class="inbar_other">
 			<ul>
-				<!--<li class="navlink_special"><a href="http://c55.me/blog">Blog</a></li>
-				<li class="navlink_special"><a href="http://wiki.minetest.com/wiki/">Wiki</a></li>
-				<li class="navlink_special"><a href="http://minetest.net/forum/">Forum</a></li>
-				<li class="navlink_special"><a href="https://github.com/celeron55/minetest">Github</a></li>
-				<li class="navlink_special"><a href="http://api.minetest.net/">API</a></li>-->
 				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/index.php">Home</a></li>
 				<li class="navlink_normal"><a href="<?php echo FORUM_ROOT;?>">Forum</a></li>
+				<li class="navlink_normal"><a href="<?php echo $serverpath;?>/zipball.php">Zipball</a></li>
 			</ul>
 		</span>
 		<span class="inbar_login">
